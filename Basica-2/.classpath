@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="src" path="Trabajo en clase/Calculadora Test/src"/>
+	<classpathentry kind="src" path="Trabajo en clase/Calculadora Test/Test"/>
+	<classpathentry kind="src" path="Trabajo en clase/Colecciones/ColeccionesClase2PB/src"/>
+	<classpathentry kind="src" path="Trabajo en clase/Colecciones/ColeccionesClase2PB/Test"/>
+	<classpathentry kind="src" path="Trabajo en clase/Ejercicio-Inmobiliaria/src"/>
+	<classpathentry kind="src" path="Trabajo en clase/Ejercicio-Inmobiliaria/Test"/>
+	<classpathentry kind="output" path="Trabajo en clase/Colecciones/ColeccionesClase2PB/bin"/>
+</classpath>
