@@ -21,7 +21,7 @@ public class Inmobiliaria {
 	 * de venta por ejemplo)
 	 */
 
-	public boolean agregarPropiedadAlArray(Propiedad nuevaPropiedad) {
+	public Boolean agregarPropiedadAlArray(Propiedad nuevaPropiedad) {
 		boolean seAgrego = this.listadoDePropiedades.add(nuevaPropiedad);
 		return seAgrego;
 	}
@@ -45,7 +45,7 @@ public class Inmobiliaria {
 	// propiedad. No se puede
 	// agregar dos clientes con un mismo DNI)
 
-	public boolean agregarUnCliente(Cliente clienteNuevo) {
+	public Boolean agregarUnCliente(Cliente clienteNuevo) {
 
 		return this.listadoDeClientes.add(clienteNuevo);
 	}
@@ -58,7 +58,7 @@ public class Inmobiliaria {
 
 	public Propiedad buscarPropiedadPorPrecio(Double precioBuscado) {
 
-		for (Propiedad propiedad : listadoDePropiedades) {
+		for (Propiedad propiedad : this.listadoDePropiedades) {
 
 			if (propiedad.getPrecio().equals(precioBuscado))
 				return propiedad;
