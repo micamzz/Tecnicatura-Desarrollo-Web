@@ -12,8 +12,10 @@ public class GestorDePeaje {
 		this.listadoDeTarifas = new HashSet<>();
 	}
 
+	
 	public Boolean agregarPase(Pase pase) {
 		boolean seAgrego = this.listadoDePases.add(pase);
+	
 		return seAgrego;
 	}
 
@@ -32,10 +34,14 @@ public class GestorDePeaje {
 	}
 
 	public Double obtenerMontoAAbonarDeUnVehiculoParaUnMesDado(String patente, Integer anio, Integer mes) {
-
-		return null;
+       Double montoAPagar = 0.0;
+       
+       
+		return montoAPagar;
 	}
 
+	
+	
 	public Tarifa obtenerTarifaVigente() {
 
 		for (Tarifa tarifas : this.listadoDeTarifas) {

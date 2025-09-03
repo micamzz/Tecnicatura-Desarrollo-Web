@@ -101,8 +101,38 @@ public class TestPeaje {
 	
 
 	
+	@Test
+	
+	public void cuandoUnVehiculoPasaPorElPeajeSeAgregaLaTarifa() {
+		
+	}
+	
+	@Test
+	
+	public void cuandoAgregoUnaTarifaNuevaModificoElHastaEnUnDiaAnterior() {
+		
+	}
+	
+	@Test
+	
+	public void obtenerElValorDeUnMes() {
+		
+	}
 	
 	
+	/*test agregarTarifa
+test de cuandoAgregoUnaTarifaModifico elHAsta en un dia Anterior
+ 
+'test de que obtengo el prrecioPara un mes
+
+//        desde    hasta
+
+// 1   1/7/2025  31/7/2025    valor 1000.0
+// 2   1/8/2025  2/9/2025       valor 1100.0
+// 3   3/9/2025   null
+ 
+	 * 
+	 */
 	
 	
 	
