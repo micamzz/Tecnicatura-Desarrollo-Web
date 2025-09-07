@@ -4,6 +4,7 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.HashSet;
@@ -12,6 +13,7 @@ import org.junit.Test;
 
 import ar.edu.unlam.dominio.GestorDePeaje;
 import ar.edu.unlam.dominio.Pase;
+import ar.edu.unlam.dominio.Tarifa;
 import ar.edu.unlam.dominio.Vehiculo;
 
 public class TestPeaje {
@@ -100,16 +102,48 @@ public class TestPeaje {
 	}
 	
 
-	
 	@Test
 	
 	public void cuandoUnVehiculoPasaPorElPeajeSeAgregaLaTarifa() {
+         GestorDePeaje ausa = new GestorDePeaje();
 		
+		LocalDateTime fechaHora = LocalDateTime.of(2025, 9, 3, 9, 14, 0);
+		LocalDateTime fechaHora2 = LocalDateTime.now();
+		LocalDateTime fechaHora3 = LocalDateTime.of(2025, 9, 3, 9, 30, 0);
+	
+	
+		Vehiculo vehiculoNuevo = new Vehiculo("LOE321", "CHEVROLET", "CELTA");
+		Vehiculo vehiculoNuevo2 = new Vehiculo("LOE421", "CHEVROLET", "CELTA");
+		
+		Pase pase = new Pase(vehiculoNuevo, fechaHora);
+		Pase pase2 = new Pase(vehiculoNuevo2, fechaHora2);
+		Pase pase3 = new Pase(vehiculoNuevo, fechaHora3);
+		
+		LocalDateTime  fechaDesde =	LocalDateTime.of(2025, 07, 1, 0, 0);
+		LocalDateTime  fechaHasta =	LocalDateTime.of(2025, 07, 31, 0, 0);
+		
+		
+		Tarifa nuevaTarifa = new Tarifa(01, fechaDesde, fechaHasta ,1000.0);
+		
+		ausa.agregarPaseConTarifa(pase, nuevaTarifa);
 	}
 	
 	@Test
 	
 	public void cuandoAgregoUnaTarifaNuevaModificoElHastaEnUnDiaAnterior() {
+	LocalDateTime  fechaDesde =	LocalDateTime.of(2025, 07, 1, 0, 0);
+	LocalDateTime  fechaHasta =	LocalDateTime.of(2025, 07, 31, 0, 0);
+	
+	
+	LocalDateTime  fechaDesdeAgosto =	LocalDateTime.of(2025, 8, 1, 0, 0);
+	LocalDateTime  fechaHastaSeptiembre =	LocalDateTime.of(2025, 8, 31, 0, 0);
+	
+	Tarifa nuevaTarifa = new Tarifa(01, fechaDesde, fechaHasta ,1000.0);
+	
+	Tarifa nuevaTarifa2 = new Tarifa(01, fechaDesdeAgosto, fechaHastaSeptiembre ,1500.0);
+	
+	 
+		
 		
 	}
 	

@@ -10,9 +10,14 @@ public class Tarifa {
 	private Double valor;
 	
 
-	public Tarifa() {
-		
+	public Tarifa(Integer id, LocalDateTime desde, LocalDateTime hasta, Double valor) {
+		this.id = id;
+		this.desde = desde;
+		this.hasta = hasta;
+		this.valor = valor;
 	}
+	
+	
 	public Integer getId() {
 		return id;
 	}

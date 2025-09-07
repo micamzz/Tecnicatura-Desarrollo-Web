@@ -15,10 +15,17 @@ public class GestorDePeaje {
 	
 	public Boolean agregarPase(Pase pase) {
 		boolean seAgrego = this.listadoDePases.add(pase);
+
 	
 		return seAgrego;
 	}
 
+	public boolean agregarPaseConTarifa(Pase pase, Tarifa tarifaNueva) {
+	
+		boolean seAgrego = this.listadoDePases.add(pase) && this.listadoDeTarifas.add(tarifaNueva);
+			return seAgrego;
+		}
+	
 	public HashSet<Vehiculo> obtenerTodosLosVehiculos() {
 
 		HashSet<Vehiculo> vehiculos = new HashSet();
@@ -40,6 +47,8 @@ public class GestorDePeaje {
 		return montoAPagar;
 	}
 
+	
+	
 	
 	
 	public Tarifa obtenerTarifaVigente() {
