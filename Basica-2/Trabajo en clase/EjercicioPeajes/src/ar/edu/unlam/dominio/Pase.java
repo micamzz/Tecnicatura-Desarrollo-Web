@@ -9,13 +9,12 @@ public class Pase {
 	private Vehiculo vehiculo;
 	private LocalDateTime fechaHora;
 	
-	
 	public Pase(Vehiculo vehiculoNuevo, LocalDateTime fechaYHora) {
 		this.vehiculo = vehiculoNuevo;
 		this.fechaHora= fechaYHora;
+	
 	}
 
-	
 
 	public Vehiculo getVehiculo() {
 		return vehiculo;
