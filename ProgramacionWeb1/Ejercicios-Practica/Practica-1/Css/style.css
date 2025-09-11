@@ -1,43 +1,56 @@
-*{
-  
- box-sizing: border-box;
+* {
+    box-sizing: border-box;
 }
 
-h1{
-    background-color: lightgray;
+h1 {
     display: flex;
     justify-content: center;
 }
 
-body{
-   width: 80%;       /* 80% del ancho */
-    height: /* 100vh; */ auto;
-    margin: auto;     /* Centrar horizontalmente */
-    background-color: #f4f4f4; /* solo para que se vea el área */
-    border: black 2px solid;
+h2 {
+    background-color: lightgray;
+    margin-left: 1em;
 }
 
-.header-main{
+body {
+    margin: auto;
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+}
+
+main {
+    width: 80%;
+    height: auto;
+    margin: auto;
+    border: black 2px solid;
+    background-color: lightgrey;
+}
+
+.header-main {
     display: flex;
     justify-content: flex-start;
-    margin-bottom: 1em; /* Espacio inferior */
+    margin-bottom: 1em;
 }
 
-.personal-info{
-   background-color: lightblue;
-   width: 50%;
-}
-.image-logo{
-   width: 40%;
+.personal-info {
+    margin-left: 3em;
+    width: 60%;
 }
 
-.image-logo img {
-    max-width: 100%;   
-    height: auto;      
-    border-radius: 8px; 
+.personal-info p {
+    margin: 0.2em 0;
 }
 
-a{
-    
-    color:blue
+.image-personal img {
+    margin-top: 1em;
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+a {
+    color: black
 }
