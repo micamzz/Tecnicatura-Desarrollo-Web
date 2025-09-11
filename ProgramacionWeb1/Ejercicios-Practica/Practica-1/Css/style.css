@@ -1,0 +1,43 @@
+*{
+  
+ box-sizing: border-box;
+}
+
+h1{
+    background-color: lightgray;
+    display: flex;
+    justify-content: center;
+}
+
+body{
+   width: 80%;       /* 80% del ancho */
+    height: /* 100vh; */ auto;
+    margin: auto;     /* Centrar horizontalmente */
+    background-color: #f4f4f4; /* solo para que se vea el área */
+    border: black 2px solid;
+}
+
+.header-main{
+    display: flex;
+    justify-content: flex-start;
+    margin-bottom: 1em; /* Espacio inferior */
+}
+
+.personal-info{
+   background-color: lightblue;
+   width: 50%;
+}
+.image-logo{
+   width: 40%;
+}
+
+.image-logo img {
+    max-width: 100%;   
+    height: auto;      
+    border-radius: 8px; 
+}
+
+a{
+    
+    color:blue
+}
