@@ -66,8 +66,6 @@ public class PersonaTest {
 		Asalariado otroAsalariado = new Asalariado(12345, "Sofia", 25, 100D);
 		Voluntario voluntario = new Voluntario(127383, "Micaela", 30, 4);
 		
-		List <Voluntario> voluntarios = new ArrayList<>();
-		Set <Voluntario> voluntariosHashSet = new HashSet<>();
 		
 		List <Persona> personas = new ArrayList<Persona>();
 		personas.add(voluntario);
