@@ -2,9 +2,13 @@
     box-sizing: border-box;
 }
 
-body{
+
+.contenedor {
     width: 80%;
+    height: 100%;
+    margin: 0 auto;
 }
+
 h1 {
     display: flex;
     justify-content: center;
@@ -16,11 +20,11 @@ h2 {
 }
 
 /* Le saca el puntito a las listas */
-ul{
+ul {
     list-style: none;
 }
 
-ul li{
+ul li {
     margin-bottom: 0.3em;
 }
 
@@ -41,21 +45,21 @@ main {
     background-color: lightgrey;
 }
 
-.personal-info{
+.personal-info {
     display: flex;
     flex-direction: row;
     align-items: flex-end;
-    gap:17em;
-    
+    gap: 17em;
+
 }
 
-.personal-lista  {
+.personal-lista {
     text-decoration: none;
 }
 
 
 .personal-info p {
-    margin: 0.2em ;
+    margin: 0.2em;
 }
 
 .image-personal {
@@ -67,4 +71,3 @@ main {
 a {
     color: black
 }
-
