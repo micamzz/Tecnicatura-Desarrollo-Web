@@ -1,0 +1,73 @@
+* {
+    box-sizing: border-box;
+}
+
+
+.contenedor {
+    width: 80%;
+    height: 100%;
+    margin: 0 auto;
+}
+
+h1 {
+    display: flex;
+    justify-content: center;
+}
+
+h2 {
+    background-color: lightgray;
+    margin-left: 1em;
+}
+
+/* Le saca el puntito a las listas */
+ul {
+    list-style: none;
+}
+
+ul li {
+    margin-bottom: 0.3em;
+}
+
+body {
+    margin: auto;
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+}
+
+main {
+    width: 80%;
+    height: auto;
+    margin: auto;
+    border: black 2px solid;
+    background-color: lightgrey;
+}
+
+.personal-info {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    gap: 17em;
+
+}
+
+.personal-lista {
+    text-decoration: none;
+}
+
+
+.personal-info p {
+    margin: 0.2em;
+}
+
+.image-personal {
+    margin-top: 0.3125em;
+    border-radius: 3.375em;
+}
+
+
+a {
+    color: black
+}

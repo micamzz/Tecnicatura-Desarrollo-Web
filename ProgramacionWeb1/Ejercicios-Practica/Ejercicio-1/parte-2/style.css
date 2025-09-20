@@ -1,0 +1,155 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.header-contenedor {
+    display: flex;
+    justify-content: center;
+    border: 1px solid black;
+    padding: 1.5em;
+    font-size: 1.1em;
+}
+
+nav a {
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+}
+
+nav a:hover {
+    color: burlywood
+}
+
+.contenedor {
+    width: 80%;
+    height: 100%;
+    margin: 0 auto;
+}
+
+/* MAIN RECETAS */
+.receta {
+    width: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 1px solid black;
+    border-radius: 5em 0em 4em 0em;
+    margin: 1em 5em 0em 5em;
+    padding-bottom: 0.5em;
+}
+
+.receta h2 {
+    padding: 1em;
+    text-transform: uppercase;
+}
+
+.info-receta {
+    font-size: 1.4em;
+    font-weight: bold;
+    color: #5BC0EB;
+    margin-bottom: 0.5em;
+
+}
+
+.ingredientes,
+.pasos {
+    width: 100%;
+    padding: 1em;
+    gap: 1em;
+
+}
+
+.ingredientes ul,
+.pasos ol {
+    padding-left: 1em;
+    list-style-position: inside;
+}
+
+.img-brownie {
+    width: 36%
+}
+
+.img-mousse {
+    width: 36%
+}
+
+/* FORMULARIO CSS */
+.formulario {
+    margin: 2em auto;
+    max-width: 600px;
+    background-color: silver;
+    border: 1px solid black;
+    padding: 1em;
+}
+
+
+.formulario form {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8em;
+}
+
+
+.formulario label {
+    display: flex;
+    align-items: center;
+    gap: 1em;
+}
+
+.botones {
+    display: flex;
+    flex-direction: row;
+    gap: 2em;
+    justify-content: center;
+}
+
+/* PARA DARLE TAMAÑO AL CUADRO DE TEXT-TAREA */
+.form-mensaje {
+    width: 27.2em;
+    height: 7.1em;
+
+}
+
+.form-email {
+    margin-left: 1.4em;
+}
+
+/* TAMAÑO A LOS DEMAS CUADROS DEL FORMULARIO */
+.form-nombre,
+.form-email,
+.form-telefono {
+    width: 11.81em;
+    height: 2.36em;
+
+}
+
+/* TAMAÑO DE LOS BOTONES */
+.boton {
+    width: 11.81em;
+    height: 2.36em;
+    border: 1px solid black;
+    border-radius: 5px;
+}
+
+.boton:hover {
+    cursor: pointer;
+    opacity: 0.8;
+}
+
+.boton-enviar {
+    background-color: #5BC0EB;
+}
+
+.boton-cancelar {
+    background-color: #F67280;
+}
+
+/* FOOTER */
+
+footer {
+    text-align: center;
+    border: 1px solid black;
+    padding: 1em;
+}
