@@ -23,7 +23,7 @@ public class TransporteTest {
 
 		// Datos COLECTIVO
 		String patente = "PGT165";
-		Double pesoMaximo = 400D;
+		Double pesoMaximo = 1000D;
 		Integer capacidadMaximaDePasajeros = 30;
 		linea216 = new Colectivo(patente, pesoMaximo, capacidadMaximaDePasajeros);
 
@@ -60,27 +60,27 @@ public class TransporteTest {
 
 	public void dadoQueExisteUnColectivoAlSuperarLaCapacidadDePesoMaximoDevuelveFalse() {
 		// Pasajero
-		Double pesoPasajero = 80.0;
+		Double pesoPasajero = 200.0;
 		Pasajero pasajeroPrueba = new Pasajero(pesoPasajero);
 
-		Double pesoPasajero2 = 150.0;
+		Double pesoPasajero2 = 350.0;
 		Pasajero pasajeroPrueba2 = new Pasajero(pesoPasajero2);
 
-		Double pesoPasajero3 = 80.0;
+		Double pesoPasajero3 = 200.0;
 		Pasajero pasajeroPrueba3 = new Pasajero(pesoPasajero3);
 
-		Double pesoPasajero4 = 100.0;
+		Double pesoPasajero4 = 500.0;
 		Pasajero pasajeroPrueba4 = new Pasajero(pesoPasajero4);
 
 		Boolean sePudoSubir = linea216.cargarPasajeros(pasajeroPrueba);
 		Boolean sePudoSubir2 = linea216.cargarPasajeros(pasajeroPrueba2);
 		Boolean sePudoSubir3 = linea216.cargarPasajeros(pasajeroPrueba3);
-		// Boolean sePudoSubir4 = linea216.cargarPasajeros(pasajeroPrueba4);
+		 Boolean sePudoSubir4 = linea216.cargarPasajeros(pasajeroPrueba4);
 
 		assertTrue(sePudoSubir);
 		assertTrue(sePudoSubir2);
 		assertTrue(sePudoSubir3);
-		// assertFalse(sePudoSubir4);
+		 assertFalse(sePudoSubir4);
 
 	}
 
