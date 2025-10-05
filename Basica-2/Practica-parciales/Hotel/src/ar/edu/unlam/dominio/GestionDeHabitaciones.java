@@ -37,6 +37,7 @@ public class GestionDeHabitaciones {
 		return this.listadoDeHabitaciones.add(habitacion);
 	}
 
+	
 	public HashSet<Reserva> buscarReservasActivas() {
 
 		HashSet<Reserva> reservasActivas = new HashSet<>();
@@ -49,6 +50,22 @@ public class GestionDeHabitaciones {
 
 		return reservasActivas;
 	}
+	
+	public HashSet<Reserva> buscarTodasLasReservas() {
+
+		HashSet<Reserva> reservasTotales = new HashSet<>();
+
+		for (Reserva reserva : listadoDeReservas) {
+		 if(reserva != null ) {
+			 reservasTotales.add(reserva);
+	
+		 }
+		}
+
+		return reservasTotales;
+	}
+	
+	
 
 	public Integer cantidadDeReservasActivas() {
 
@@ -73,6 +90,7 @@ return reservasActivas.size();
 		return clienteHistorial;
 	}
 
+	
 	public Reserva obtenerReservaPorId(Integer idBuscado) {
 		for (Reserva reserva : listadoDeReservas) {
 			if (reserva.getId().equals(idBuscado)) {
@@ -108,6 +126,7 @@ return reservasActivas.size();
 		Integer dias = (int) ChronoUnit.DAYS.between(fechaIngreso, fechaEgreso);
 		return dias;
 
+
 	}
 
 	public Double obtenerPrecioReserva(Integer idReserva) {
@@ -121,5 +140,8 @@ return reservasActivas.size();
 
 		return montoFinal;
 	}
+
+	
+	
 
 }

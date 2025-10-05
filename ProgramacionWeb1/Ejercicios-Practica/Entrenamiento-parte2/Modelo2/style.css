@@ -1,0 +1,82 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+main{
+    width: 100%;
+    height: 100vh;
+    display: grid;
+    grid-template-areas:
+     "uno dos"
+    "tres cuatro"
+    "cinco seis";
+    grid-template-rows: 1fr 2fr 1fr
+}
+
+.center{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 5em;
+    border: 1px solid black;
+}
+
+.uno{
+    grid-area: uno;
+    background-color:lightgreen ;
+}
+ .dos{
+    background-color:lightgreen ;
+    grid-area: dos;
+}
+
+.tres{
+    grid-area: tres;
+     background-color: lightyellow;
+
+}
+.cuatro{
+    grid-area: cuatro;
+    background-color: lightyellow;
+
+}
+.tres, .cuatro {
+   border-bottom: 3px solid black;
+}
+
+.cinco{
+    grid-area: cinco;
+    background-color:lightpink ;
+}
+
+.seis{
+    grid-area:seis;
+    background-color: lightsteelblue;
+}
+
+/* RESPONSIVE */
+
+@media screen and (max-width: 480px){
+    main {
+           grid-template-rows: 1fr 1fr; 
+         grid-template-columns: repeat(2, 1fr);
+        grid-template-areas:
+            "seis seis"
+            "cinco cinco"
+            "tres cuatro"
+            "dos dos"
+            "uno uno";
+    }
+
+    .seis{
+    background-color:lightpink ;
+}
+.tres, .cuatro {
+   border: 1px solid black;
+}
+.cinco{
+    background-color: lightsteelblue;
+}
+}

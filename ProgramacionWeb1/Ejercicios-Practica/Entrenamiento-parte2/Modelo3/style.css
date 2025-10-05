@@ -1,0 +1,69 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container-general{
+    width: 100;
+    height: 100vh;
+    display: grid;
+    grid-template-areas: "uno dos"
+    "tres cuatro"
+    "cinco seis";
+    grid-template-columns: 2fr 1fr;
+}
+
+.center{
+       border: 1px solid black;
+       font-size: 5em;
+       display: flex;
+       align-items: center;
+       justify-content: center;
+}
+
+.uno{
+    grid-area: uno;
+    background-color: lightgreen;
+}
+.dos{
+    grid-area: dos;
+    background-color: lightgreen;
+}
+
+.tres{
+    grid-area: tres;
+    background-color: lightyellow;
+}
+
+.cuatro{
+    grid-area: cuatro;
+    background-color: lightyellow;
+}
+
+.cinco{
+    grid-area: cinco;
+    background-color: lightpink;
+}
+
+.seis{
+    grid-area: seis;
+    background-color: lightblue;
+}
+
+@media screen and (max-width:480px){
+    .container-general{
+         display: grid;
+        grid-template-columns: 1fr;
+        /* una sola columna */
+        /* grid-template-rows: auto auto auto; solo 3 filas visibles */
+        grid-template-areas:
+            "uno"
+            "tres"
+            "seis";
+    }
+
+    .dos, .cuatro, .cinco {
+        display: none; /* ocultamos estos elementos */
+    }
+}

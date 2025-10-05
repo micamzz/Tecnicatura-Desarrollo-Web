@@ -6,6 +6,7 @@ import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertTrue;
 
 import java.time.LocalDate;
+import java.util.HashSet;
 
 import org.junit.Before;
 import org.junit.Test;
@@ -186,6 +187,7 @@ public class SistemaReservaTest {
 		hilton.realizarReserva(reserva6);
 		
 		
+		// SE CIERRA LA RESERVA 4
 		Integer idReserva =  reserva4.getId();
 		LocalDate fechaEgreso = LocalDate.of(2025, 06, 21);
 		hilton.cerrarReserva(idReserva, fechaEgreso);
@@ -200,7 +202,41 @@ public class SistemaReservaTest {
 	}
 	
 	
+	@Test
 	
+	public void dadoQueExisten3ReservasObtenerLasReservasActivas() {
+		
+		LocalDate fecha1 = LocalDate.of(2025, 4, 23);  // 23 Abril 2025
+		LocalDate fecha2 = LocalDate.of(2025, 5, 10);  // 10 Mayo 2025
+		LocalDate fecha3 = LocalDate.of(2025, 6, 1);   // 1 Junio 2025
+		
+		Cliente cliente3 = new Cliente("Carlos");
+	
+
+		Reserva reserva1 = new Reserva(cliente1, fecha1, 101);
+		Reserva reserva2 = new Reserva(cliente2, fecha2, 102);
+		Reserva reserva3 = new Reserva(cliente3, fecha3, 103);
+		
+
+		hilton.realizarReserva(reserva1);
+		hilton.realizarReserva(reserva2);
+		hilton.realizarReserva(reserva3);
+		
+		
+		HashSet <Reserva> listadoReserva = new HashSet <> ();
+		
+		listadoReserva.add(reserva1);
+		listadoReserva.add(reserva2);
+		listadoReserva.add(reserva3);
+		
+		assertEquals(listadoReserva, hilton.buscarTodasLasReservas());
+		
+		
+		
+		
+		
+		
+	}
 	
 	
 	/*
