@@ -9,7 +9,7 @@ import java.util.Set;
 
 public class GestionDeHabitaciones {
 
-	private Set<Reserva> listadoDeReservas;
+	private HashSet<Reserva> listadoDeReservas;
 	private Set<Habitacion> listadoDeHabitaciones;
 
 	public GestionDeHabitaciones() {
@@ -52,27 +52,14 @@ public class GestionDeHabitaciones {
 	}
 	
 	public HashSet<Reserva> buscarTodasLasReservas() {
-
-		HashSet<Reserva> reservasTotales = new HashSet<>();
-
-		for (Reserva reserva : listadoDeReservas) {
-		 if(reserva != null ) {
-			 reservasTotales.add(reserva);
-	
-		 }
-		}
-
-		return reservasTotales;
+		return this.listadoDeReservas;
 	}
 	
 	
-
 	public Integer cantidadDeReservasActivas() {
-
-		HashSet<Reserva> reservasActivas = buscarReservasActivas();
-return reservasActivas.size();
-
 		
+		HashSet<Reserva> reservasActivas = buscarReservasActivas();
+          return reservasActivas.size();	
 	}
 
 	
@@ -81,10 +68,8 @@ return reservasActivas.size();
 	public HashSet<Cliente> buscarClientesQueHicieronReserva() {
 
 		HashSet<Cliente> clienteHistorial = new HashSet<>();
-
 		for (Reserva reserva : listadoDeReservas) {
 			clienteHistorial.add(reserva.getCliente1());
-
 		}
 
 		return clienteHistorial;
@@ -106,7 +91,7 @@ return reservasActivas.size();
 
 		Reserva reservaACerrar = obtenerReservaPorId(idBuscado);
 
-		if (reservaACerrar.getFechaEgreso() == null && !fechaEgreso.isBefore(reservaACerrar.getFechaIngreso())) {
+		if (reservaACerrar.getFechaEgreso() == null && fechaEgreso.isAfter(reservaACerrar.getFechaIngreso())) {
 			reservaACerrar.setFechaEgreso(fechaEgreso);
 			return true;
 		}
@@ -130,12 +115,12 @@ return reservasActivas.size();
 	}
 
 	public Double obtenerPrecioReserva(Integer idReserva) {
+		Reserva reserva = obtenerReservaPorId(idReserva);
 		Integer dias = obtenerDiasDeEstadia(idReserva);
 		Double montoFinal = 0D;
 
-		for (Habitacion habitacion : listadoDeHabitaciones) {
-			montoFinal = habitacion.getPrecio() * dias;
-			return montoFinal;
+		for (Habitacion habitacion : reserva.getHabitacion()) {
+			montoFinal += habitacion.getPrecio() * dias;
 		}
 
 		return montoFinal;

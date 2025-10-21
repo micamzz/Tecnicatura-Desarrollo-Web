@@ -128,12 +128,16 @@ public class SistemaReservaTest {
 		hilton.realizarReserva(reserva1);
 		Integer idReserva = reserva1.getId();
 		LocalDate fechaEgreso = LocalDate.of(2025, 04, 26); // 3 dias
-
-       hilton.cerrarReserva(idReserva, fechaEgreso); // Se cierra la reserva
-       
+        
 		Habitacion habitacion2 = new HabitacionDeluxe(4);
-		hilton.AgregarHabitaciones(habitacion2);
+		reserva1.agregarHabitacion(habitacion2); // 
+		hilton.AgregarHabitaciones(habitacion2); //
 		
+		
+       hilton.cerrarReserva(idReserva, fechaEgreso); // Se cierra la reserva 1
+       
+
+
 		Double valorEsperado = 720D;
 		Double valorObtenido = hilton.obtenerPrecioReserva(idReserva);
 
@@ -145,10 +149,12 @@ public class SistemaReservaTest {
 		hilton.realizarReserva(reserva1);
 		Integer idReserva = reserva1.getId();
 		LocalDate fechaEgreso = LocalDate.of(2025, 04, 29); // 3 dias
-
-       hilton.cerrarReserva(idReserva, fechaEgreso); // Se cierra la reserva
-     
+	
+		reserva1.agregarHabitacion(habitacion1);
 		hilton.AgregarHabitaciones(habitacion1);
+		;
+       hilton.cerrarReserva(idReserva, fechaEgreso); // Se cierra la reserva
+    
 		
 		Double valorEsperado = 1440D;
 		Double valorObtenido = hilton.obtenerPrecioReserva(idReserva);
