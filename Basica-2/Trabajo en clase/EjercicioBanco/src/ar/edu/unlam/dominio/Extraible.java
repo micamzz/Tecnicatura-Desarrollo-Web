@@ -2,5 +2,5 @@ package ar.edu.unlam.dominio;
 
 public interface Extraible {
 	
-	public Boolean extraer(Double montoAExtraer);
+	public Boolean extraer(Double montoAExtraer) throws SaldoInsuficienteException;
 }

@@ -11,16 +11,18 @@ public class CuentaCorriente extends Cuenta implements Extraible{
 
 
 	@Override
-	public Boolean extraer(Double montoAExtraer) {
-		Boolean seExtrajo = false;
-
-		if (montoAExtraer <= (super.getSaldo() + this.limiteDescubierto)) {
-			Double montoAActualizar = getSaldo() - montoAExtraer;
+	public Boolean extraer(Double montoAExtraer) throws SaldoInsuficienteException {
+	
+		Double saldoTotalEnCuenta = super.getSaldo() + this.limiteDescubierto;
+		
+		if (montoAExtraer > saldoTotalEnCuenta)
+			throw new SaldoInsuficienteException("No se puede extraer mas del saldo permitido");
+		
+		Double montoAActualizar = getSaldo() - montoAExtraer;
 			super.setSaldo(montoAActualizar);
-			seExtrajo = true;
-		}
 
-		return seExtrajo;
-	}
+		return true;
+	
+}
 	
 }

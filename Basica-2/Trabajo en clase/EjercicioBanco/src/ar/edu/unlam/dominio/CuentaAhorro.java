@@ -9,16 +9,16 @@ public class CuentaAhorro extends Cuenta implements Extraible{
 
 	
 	@Override
-	public Boolean extraer(Double montoAExtraer) {
-	Boolean seExtrajo = false;
+	public Boolean extraer(Double montoAExtraer) throws SaldoInsuficienteException {
 
-	if (montoAExtraer <= super.getSaldo()) {
-		this.setSaldo(getSaldo()-montoAExtraer);
-		seExtrajo = true;
+		if (montoAExtraer > super.getSaldo()) {
+			throw new SaldoInsuficienteException("No se puede extraer mas del saldo disponible");
+		}
+
+		this.setSaldo(getSaldo() - montoAExtraer);
+		return true;
+
 	}
-
-	return seExtrajo;
-}
 
 
 

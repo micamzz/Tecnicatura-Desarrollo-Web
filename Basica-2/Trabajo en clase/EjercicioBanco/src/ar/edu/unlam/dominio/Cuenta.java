@@ -28,10 +28,19 @@ public abstract class Cuenta {
 		
 	}
 
+	
+	public Integer getId() {
+		return id;
+	}
+
+	public void setId(Integer id) {
+		this.id = id;
+	}
 
 	public void setSaldo(Double montoAActualizar) {
 		this.saldo = montoAActualizar;
 	}
+
 
 	public Integer getCbu() {
 		return cbu;

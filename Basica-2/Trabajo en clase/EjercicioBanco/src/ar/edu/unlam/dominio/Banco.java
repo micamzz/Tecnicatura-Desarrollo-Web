@@ -73,7 +73,6 @@ public class Banco {
 		return null;
 	}
 
-	
 	public Boolean realizarTransferencia(Cliente clienteOrigen, Double montoATransferir, Cliente clienteDestino) {
 
 		Cuenta cuentaOrigen = buscarCuentaPorCliente(clienteOrigen);
@@ -88,20 +87,73 @@ public class Banco {
 		}
 
 		cuentaOrigen.setSaldo(cuentaOrigen.getSaldo() - montoATransferir);
-		cuentaDestino.setSaldo(montoATransferir);
+		cuentaDestino.depositar(montoATransferir);
 		return true;
 
 	}
+
+//                      EXCEPCIONES
+	public Cuenta buscarCuentaPorCbu(Integer cbu) throws CbuInexistenteException {
+
+		for (Cuenta cuenta : listadoDeCuentas) {
+			if (cuenta.getCbu().equals(cbu))
+				return cuenta;
+		}
+
+		throw new CbuInexistenteException("No existe cuenta asociada con ese CBU en nuestro sistema");
+	}
+
+	public Cuenta buscarCuentaPorDni(Cliente clienteBuscado) throws NumeroDeCuentaInexistenteException {
+
+		for (Cuenta cuenta : listadoDeCuentas) {
+			if (cuenta.getCliente().getDni().equals(clienteBuscado.getDni())) {
+				return cuenta;
+			}
+		}
+		throw new NumeroDeCuentaInexistenteException("No existe cuenta asociada con ese DNI en nuestro sistema");
+	}
+
+	public Cuenta buscarCuentaPorNumeroDeCuenta(Integer numeroCuenta) throws NumeroDeCuentaInexistenteException {
+
+		for (Cuenta cuenta : listadoDeCuentas) {
+			if (cuenta.getId().equals(numeroCuenta))
+				return cuenta;
+		}
+
+		throw new NumeroDeCuentaInexistenteException("El numero de cuenta no esta asociado a nuestro sistema.");
+	}
 	
 
-//	public Boolean realizarTransferencia(Cliente clienteOrigen, Double montoATransferir, Cliente clienteDestino) { 
-//		Cuenta cliente1 = buscarCuentaPorCliente(clienteOrigen);
-//		Cuenta clienteDestino1 = buscarCuentaPorCliente(clienteDestino); 
-//		if (cliente1.getSaldo() >= montoATransferir) {
-//			cliente1.setSaldo(cliente1.getSaldo() - montoATransferir); 
-//		clienteDestino1.depositar(montoATransferir); return true; 
-//		}return false; 
-//		}
-//	
-//
+	public Boolean realizarTransferenciaPorCbu(Integer numeroCuenta, Integer cbu, Double montoATransferir)
+			throws NumeroDeCuentaInexistenteException, CbuInexistenteException, SaldoInsuficienteException {
+
+		Cuenta cuentaOrigen = buscarCuentaPorNumeroDeCuenta(numeroCuenta);
+		Cuenta cuentaDestino = buscarCuentaPorCbu(cbu);
+
+		((Extraible) cuentaOrigen).extraer(montoATransferir);
+	    cuentaDestino.depositar(montoATransferir);
+	
+	    return true;
+
+
+	    /*	if (cuentaOrigen.getSaldo()  < montoATransferir) 
+		 throw new SaldoInsuficienteException("Saldo insuficiente");
+	cuentaOrigen.setSaldo(cuentaOrigen.getSaldo() - montoATransferir);
+	cuentaDestino.depositar(montoATransferir);
+	
+	
+	 COMO ES UNA INTERFACE VERIFICAR QUE LA CUENTA DE ORIGEN
+	 IMPLEMENTE EXTRAIBLE, QUE ES DONDE ESTA EL METODO EXTRAER, CADA UNO CON SUS
+	 VALIDACIONES
+	 
+	if (!(cuentaOrigen instanceof Extraible)) {
+       throw new SaldoInsuficienteException("La cuenta origen no permite extraer.");
+   }
+	 SE CASTEA A EXTRAIBLE QUE ES LA INTERFACE QUE IMPLEMENTA EL METODO EXTRAER
+	 QUE TIENE LAS EXCEPCIONES, PARA NO USAR EL SET.s */
+
+	}
+
+	
+
 }
