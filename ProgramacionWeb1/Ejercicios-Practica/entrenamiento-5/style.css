@@ -1,0 +1,59 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.formulario{
+    margin: 2em auto;     
+    display: flex;
+    flex-direction: column;
+    gap:2em;
+    align-items: center;
+    border: 1px solid black;
+     padding: 2em; 
+    width: 400px;  
+
+}
+
+.botones{
+    display: flex;
+    gap:1em;
+}
+
+button{
+       width: 10em;
+       height: 2em;
+       border-radius: 18px;
+}
+.boton-enviar{
+    background-color: lightgreen;
+}
+
+.boton-cancelar{
+    background-color: lightcoral;
+}
+
+/* MENSAJES DE ERROR JS */
+.js-error-usuario, .js-error-contrasenia,.js-error-repetir-contrasenia {
+    color: red;
+    font-size: 0.9rem;
+    margin-top: 0.2em;
+}
+
+/* Pagina de Bienvenida */
+.main-bienvenida{
+    display: flex;
+    flex-direction: column;
+    gap:2em;
+    align-items: center;
+}
+
+.titulo-bienvenida{
+    color: lightcoral;
+    font-size: 3em;
+}
+
+a{
+    text-decoration: none;
+}
