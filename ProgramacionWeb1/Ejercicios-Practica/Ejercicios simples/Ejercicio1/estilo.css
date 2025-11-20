@@ -1,0 +1,11 @@
+form {
+  width: 250px;
+  padding: 20px;
+  border: 1px solid #ccc;
+}
+
+#mensaje {
+  margin-top: 20px;
+  font-weight: bold;
+}
+ 

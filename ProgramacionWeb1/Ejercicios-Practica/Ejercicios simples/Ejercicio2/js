@@ -1,0 +1,22 @@
+const numero1 = document.querySelector('#num1');
+const numero2 = document.querySelector('#num2');
+const botonEnviar = document.querySelector('#btn');
+const resultado = document.querySelector('#resultado');
+
+botonEnviar.addEventListener('click', () => {
+
+    if (numero2.value === '' || numero1.value === '') {
+        resultado.textContent = 'ingrese ambos numeros';
+        return;
+    }
+
+    if (isNaN(numero1.value) || isNaN(numero2.value)) {
+        resultado.textContent = 'Ingrese solo números';
+        return;
+    }
+
+    const final = numero1.value.concat(numero2.value);
+
+    resultado.textContent = `El resultado es : ${final}`;
+
+});
