@@ -1,0 +1,93 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+
+body {
+    margin: 4em;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+main, header, footer{
+    width: 90%;
+    margin: auto;
+}
+
+h1{
+    margin: 1em;
+    
+}
+
+
+
+
+input[type=text], select {
+    width: 100%;
+    padding: 0.5em;
+    box-sizing: border-box;
+}
+
+h2{
+    margin: 1em;
+    text-align: center;
+}
+
+
+.section{   
+    display: flex;
+    justify-content: space-between;
+}
+
+.section article {
+    margin: 1em;
+    padding: 1em;
+    width: calc(50% - 2em);
+}
+
+.vista {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.grupo-div{
+    margin: 1em 0;
+}
+
+.grupo-div h4{
+    margin-bottom: 0.3em;
+}
+
+header, footer, article{
+    border: 2px solid black;
+}
+
+main {
+    border-right: 2px solid black ;
+    border-left: 2px solid black ;
+}
+
+.rojo{
+    background-color: red;
+}
+
+.azul{
+    background-color: blue;
+}
+
+.verde{
+    background-color: green;
+}
+
+.derecha {
+    justify-content: right; 
+}
+
+.izquierda {
+    justify-content: left;
+}
+
+.centrado {
+    justify-content: center;
+}
